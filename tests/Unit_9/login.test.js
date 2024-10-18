@@ -8,6 +8,5 @@ test ('Perform login and verify elements', async ({ page }) => {
 
     await expect(page.locator('.title')).toHaveText('Products');
     await expect(page.locator('.shopping_cart_link')).toBeVisible();
-    const products = await page.locator('.inventory_item').count();
-    expect(products).toBeGreaterThan(1); // 1 line from 2
+    expect(await page.locator('.inventory_item').count()).toBeGreaterThan(1);
 });
